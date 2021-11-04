@@ -1,20 +1,64 @@
-// Stack-ADT.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Stack-ADT.cpp : By Niall Starkey
 
 #include <iostream>
+#include <crtdbg.h>
+#include <stack>
+#include "Stack.h"
+
+enum Choice
+{
+    Arithmetic = 1,
+    NQueen = 2,
+    Empty = 0
+};
+
+void Start();
+Choice Menu();
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Start();
+    _CrtDumpMemoryLeaks();
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void Start()
+{
+    Choice c = Menu();
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    switch (c)
+    {
+        case Arithmetic:
+            std::cout << "Arithmetic";
+            break;
+
+        case NQueen:
+            std::cout << "NQueen";
+            break;
+
+        case Empty:
+            break;
+    }
+}
+
+Choice Menu()
+{
+    std::cout << "1. Evaluate arithmetic expression" << std::endl;
+    std::cout << "2. Solve N Queen" << std::endl;
+    std::cout << "Choose a number from the menu:" << std::endl;
+
+    std::string c = "";
+    std::cin >> c;
+
+    if (c == "1")
+    {
+        return Arithmetic;
+    }
+    else if (c == "2")
+    {
+        return NQueen;
+    }
+    else
+    {
+        return Empty;
+    }
+}
