@@ -10,14 +10,24 @@ class Stack
 private:
 	struct Node
 	{
-		value_type Data;
-		Node* Next;
+		value_type	Data;
+		Node*		Next;
 	};
 
-	Node* Start;
+	Node*	Start;
 
 public:
-	Stack() = default;
+	Stack()	= default;
+
+	Stack<value_type>& operator += (Stack<value_type>& _Stack)
+	{
+		while (_Stack.Start)
+		{
+			this->Push(_Stack.Pop());
+		}
+
+		return *this;
+	}
 
 	bool Is_Empty()
 	{
@@ -32,7 +42,7 @@ public:
 		Temp = Start;
 		while (Temp)
 		{
-			Contents += std::to_string(Temp->Data);
+			Contents += Temp->Data;
 			Contents += " -> ";
 			Temp = Temp->Next;
 		}
@@ -70,17 +80,21 @@ public:
 		if (!Start) { return NULL; }
 
 		Node* Temp;
+		value_type Data;
+
 		Temp = Start;
 		Start = Start->Next;
-		Temp->Next = NULL;
+		Data = Temp->Data;
+
 		delete Temp;
+		return Data;
 	}
 
-	void Top()
+	value_type Top()
 	{
-		if (!Start) { return; }
+		if (!Start) { return NULL; }
 
-		std::cout << Start->Data;
+		return Start->Data;
 	}
 
 	void Clear()
