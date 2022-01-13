@@ -1,12 +1,17 @@
+//  Notation_Menu.h : By Niall Starkey
+
 #pragma once
 
-#include <iostream>
-#include "Menu.h"
-#include "Notation.h"
+//	HEADERS:
+#include	<iostream>
+#include	"Menu.h"
+#include	"Notation.h"
 
+//	Notation_Menu class.
 class Notation_Menu : public Menu
 {
 private:
+	//	Enumeration for each menu option, with empty as default.
 	enum Options
 	{
 		Int_Expression = 1,
@@ -14,11 +19,9 @@ private:
 		Empty
 	};
 
-	std::string Expression;
-	Notation* Notation_Manager;
-
 public:
-	void Show();
-	int Get_Choice();
+	//	FUNCTIONS:
+	void	Show();
+	int		Get_Choice();
 };
 

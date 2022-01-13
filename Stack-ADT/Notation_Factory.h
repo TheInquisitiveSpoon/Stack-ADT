@@ -1,10 +1,16 @@
+//  Notation_Factory.h : By Niall Starkey
+
 #pragma once
 
-#include "Notation.h"
+//	HEADERS:
+#include	<memory>
+#include	"Notation.h"
 
+//	Enumeration for each child notation.
 enum Notation_Type
 {
 	Int
 };
 
-Notation* New_Notation(Notation_Type Notation);
+//	FUNCTIONS:
+std::unique_ptr<Notation>	New_Notation(Notation_Type Notation);

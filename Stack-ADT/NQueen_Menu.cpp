@@ -1,14 +1,19 @@
-#include <iostream>
-#include <string>
-#include "NQueen_Menu.h"
-#include "NQueen_Factory.h"
+//  NQueen_Menu.cpp : By Niall Starkey
 
+//	HEADERS:
+#include	<iostream>
+#include	<string>
+#include	"NQueen_Menu.h"
+#include	"NQueen_Factory.h"
+
+//	Shows the NQuuen menu and begins solves the nqueen problem based on the user input.
 void NQueen_Menu::Show()
 {
 	NQueen_Type Current_NQueen = Basic;
-	NQueen* NQueen_Manager = New_NQueen(Current_NQueen);
+	std::unique_ptr<NQueen> NQueen_Manager = New_NQueen(Current_NQueen);	//	Manager for current type of nqueen selected.
 	Options Choice = Empty;
 
+	//	Loops until exit is chosen.
 	while (Choice != Exit)
 	{
 		system("CLS");
@@ -17,16 +22,19 @@ void NQueen_Menu::Show()
 
 		Choice = (Options)Get_Choice();
 
+		//	Runs the nqueen solver depending on what type of nqueen was chosen by the user.
 		if (Choice == Run)
 		{
-			NQueen* NQueen_Manager = New_NQueen(Current_NQueen);
+			NQueen_Manager.reset();
+			NQueen_Manager = New_NQueen(Current_NQueen);
 			NQueen_Manager->Solve();
 		}
 	}
 
-	delete NQueen_Manager;
+	NQueen_Manager.reset();
 }
 
+//	Gets the menu choice from the user input.
 int NQueen_Menu::Get_Choice()
 {
 	std::cout << "Choose a number from the menu:" << std::endl;

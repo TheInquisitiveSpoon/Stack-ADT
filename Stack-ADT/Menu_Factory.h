@@ -1,7 +1,11 @@
+//  Menu_Factory.h : By Niall Starkey
+
 #pragma once
 
-#include "Menu.h"
+//	HEADERS:
+#include	"Menu.h"
 
+//	Enumeration for each type of child menu.
 enum Menu_Type
 {
 	EMain_Menu,
@@ -9,4 +13,5 @@ enum Menu_Type
 	ENQueen_Menu
 };
 
-Menu* New_Menu(Menu_Type Menu);
+//	FUNCTIONS:
+std::unique_ptr<Menu>	New_Menu(Menu_Type Menu_Type);

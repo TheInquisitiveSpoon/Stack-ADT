@@ -1,10 +1,15 @@
+//  Main_Menu.h : By Niall Starkey
+
 #pragma once
 
-#include "Menu.h"
+//	HEADERS:
+#include	"Menu.h"
 
+//	Main_Menu class.
 class Main_Menu : public Menu
 {
 private:
+	//	Enumeration for the different menu options, with Empty for default.
 	enum Options
 	{
 		Notation = 1,
@@ -14,7 +19,8 @@ private:
 	};
 
 public:
-	void Show();
-	int Get_Choice();
+	//	FUNCTIONS:
+	void	Show();
+	int		Get_Choice();
 };
 

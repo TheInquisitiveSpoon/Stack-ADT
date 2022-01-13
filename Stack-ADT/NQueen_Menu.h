@@ -1,12 +1,16 @@
+//  NQueen_Menu.h : By Niall Starkey
+
 #pragma once
 
-#include <iostream>
-#include "Menu.h"
-#include "NQueen.h"
+//	HEADERS:
+#include	"Menu.h"
+#include	"NQueen.h"
 
+//	NQueen_Menu class.
 class NQueen_Menu : public Menu
 {
 private:
+	//	Enumeration for each of the menu options, with a default empty.
 	enum Options
 	{
 		Run = 1,
@@ -14,11 +18,9 @@ private:
 		Empty
 	};
 
-	std::string Expression;
-	NQueen* NQueen_Manager;
-
 public:
-	void Show();
-	int Get_Choice();
+	//	FUNCTIONS:
+	void	Show();
+	int		Get_Choice();
 };
 

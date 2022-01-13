@@ -1,43 +1,43 @@
+//  Stack.h : By Niall Starkey
+
 #pragma once
 
-#include <iostream>
-#include <string>
+//	HEADERS:
+#include	<iostream>
+#include	<string>
 
 template<typename value_type>
 
+// Stack class
 class Stack
 {
 private:
+	//	Node struct for linked list.
 	struct Node
 	{
 		value_type	Data;
 		Node*		Next;
 	};
 
+	//	Initial node in Stack.
 	Node*	Start;
 
 public:
+	//	FUNCTIONS:
+	//	Default constructor.
 	Stack()	= default;
 
-	Stack<value_type>& operator += (Stack<value_type>& _Stack)
-	{
-		while (_Stack.Start)
-		{
-			this->Push(_Stack.Pop());
-		}
-
-		return *this;
-	}
-
+	//	Checks if the stack is empty.
 	bool Is_Empty()
 	{
 		return !Start;
 	}
 
+	//	Output the contents of the stack to a string.
 	std::string To_String()
 	{
 		Node* Temp;
-		std::string Contents;
+		std::string	Contents;
 
 		Temp = Start;
 		while (Temp)
@@ -51,6 +51,7 @@ public:
 		return Contents;
 	}
 
+	//	Returns the current size of the stack.
 	int Size()
 	{
 		Node* Temp;
@@ -67,6 +68,7 @@ public:
 		return Count;
 	}
 
+	//	Push a new piece of data onto the top of the stack.
 	void Push(const value_type& _Data)
 	{
 		Node* Temp = new Node();
@@ -75,6 +77,7 @@ public:
 		Start = Temp;
 	}
 
+	//	Pop the top of the stack and return its value.
 	value_type Pop()
 	{
 		if (!Start) { return NULL; }
@@ -90,6 +93,7 @@ public:
 		return Data;
 	}
 
+	//	Peek at the top of the stack, without removing the data.
 	value_type Top()
 	{
 		if (!Start) { return NULL; }
@@ -97,6 +101,7 @@ public:
 		return Start->Data;
 	}
 
+	//	Clears the entire stack.
 	void Clear()
 	{
 		if (!Start) { return; }

@@ -1,12 +1,16 @@
-#include "NQueen_Factory.h"
-#include "NQueen.h"
-#include "Basic_NQueen.h"
+//  NQueen_Factory.cpp : By Niall Starkey
 
-NQueen* New_NQueen(NQueen_Type NQueen)
+//	HEADERS:
+#include	"NQueen_Factory.h"
+#include	"NQueen.h"
+#include	"Basic_NQueen.h"
+
+//	Returns a pointer to the newly created child class of the selected nqueen type.
+std::unique_ptr<NQueen> New_NQueen(NQueen_Type NQueen)
 {
 	switch (NQueen)
 	{
 	case Basic:
-		return new Basic_NQueen();
+		return std::make_unique<Basic_NQueen>();
 	}
 }

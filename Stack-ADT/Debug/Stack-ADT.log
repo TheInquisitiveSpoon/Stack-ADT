@@ -1,4 +1,20 @@
 ﻿  Basic_NQueen.cpp
+  Int_Expression.cpp
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Int_Expression.cpp(34,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Int_Expression.cpp(61,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Int_Expression.cpp(186,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Int_Expression.cpp(200,13): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Int_Expression.cpp(358,20): warning C4018: '<': signed/unsigned mismatch
+  Main_Menu.cpp
+  Menu_Factory.cpp
+  NQueen_Factory.cpp
   NQueen_Menu.cpp
+  Notation_Factory.cpp
+  Notation_Menu.cpp
+  Stack-ADT.cpp
   Generating Code...
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Notation_Factory.cpp(16): warning C4715: 'New_Notation': not all control paths return a value
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\NQueen_Factory.cpp(16): warning C4715: 'New_NQueen': not all control paths return a value
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Menu_Factory.cpp(24): warning C4715: 'New_Menu': not all control paths return a value
+C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Stack-ADT\Int_Expression.cpp(314): warning C4715: 'Int_Expression::Apply_Operator': not all control paths return a value
   Stack-ADT.vcxproj -> C:\Users\Niall\Desktop\UNI\4th Year\CO3402 - Object Orientated Methods in Computing\Assignment\Stack-ADT\Debug\Stack-ADT.exe

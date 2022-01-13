@@ -1,10 +1,15 @@
+//  NQueen_Factory.h : By Niall Starkey
+
 #pragma once
 
-#include "NQueen.h"
+//	HEADERS:
+#include	"NQueen.h"
 
+//	Enumeration for each child class.
 enum NQueen_Type
 {
 	Basic
 };
 
-NQueen* New_NQueen(NQueen_Type NQueen);
+//	FUNCTIONS:
+std::unique_ptr<NQueen>		New_NQueen(NQueen_Type NQueen);
